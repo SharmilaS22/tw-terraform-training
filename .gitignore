@@ -1,0 +1,11 @@
+*.pem
+
+.terraform/
+
+*.lock.hcl
+
+*.tfstate
+
+*.tfstate.backup
+
+.DS_Store
