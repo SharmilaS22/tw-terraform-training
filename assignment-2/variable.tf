@@ -10,7 +10,7 @@ variable "vpc_cidr" {
 
 variable "ami_linux" {
   type    = string
-  default = "ami-0fa399d9c130ec923" //Ohio - amazon linux
+  default = "ami-0fa399d9c130ec923" // Ohio - amazon linux
 }
 
 variable "instance_type" {
@@ -28,19 +28,21 @@ variable "user_data_script_path" {
   default = "./user-data.sh"
 }
 
+
 variable "key_pair_name" {
   type    = string
-  default = "sample-kp"
+  default = "sharmi-kp"
 }
-
+# OR
 variable "key_pair_pem_path" {
   type    = string
   default = "/path/to/pem/file/sample-kp.pem"
 }
 
+
 variable "sg_ports" {
   type    = list(number)
-  default = [22, 80, 443]
+  default = [80]
 }
 
 variable "public_subnet_cidr" {
@@ -55,10 +57,25 @@ variable "public_subnet_az" {
 
 variable "asg_min_size" {
   type    = number
-  default = 1 //TODO 2
+  default = 2
 }
 
 variable "asg_max_size" {
   type    = number
-  default = 1 //TODO 3
+  default = 3
+}
+
+variable "asg_desired_size" {
+  type    = number
+  default = 2
+}
+
+variable "hosted_zone_id" {
+  type    = string
+  default = "xxxxx"
+}
+
+variable "asg_name" {
+  type    = string
+  default = "sh-asg-terraform"
 }

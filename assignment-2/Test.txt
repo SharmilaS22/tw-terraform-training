@@ -1,0 +1,6 @@
+aws cloudwatch set-alarm-state \
+  --alarm-name <alarm-name> \
+  --state-value ALARM \
+  --state-reason "Testing alarm state for scale-out" 
+  --profile <profile>
+
